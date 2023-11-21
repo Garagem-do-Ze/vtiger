@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mydb-deployment
+  name: db-deploy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      env: production-db
+      env: prod-db
   template:
     metadata:
-      name: mydb-pod
+      name: db-deploy
       labels:
-        env: production-db
+        env: prod-db
     spec:
       volumes:
         - name: db-vol

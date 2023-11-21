@@ -22,6 +22,6 @@ spec:
         image: ldamasio/vtiger:1
         volumeMounts:
           - mountPath: /var/www/html
-            name: front-vol
+            name: php-vol
 
 

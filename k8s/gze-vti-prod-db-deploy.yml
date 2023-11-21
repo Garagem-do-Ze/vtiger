@@ -19,7 +19,7 @@ spec:
             claimName: db-pvc
       containers:
       - name: database
-        image: ragh19/phpproject:mysql_v1
+        image: ldamasio/vtiger:1
         volumeMounts:
           - mountPath: /var/lib/mysql
             name: db-vol

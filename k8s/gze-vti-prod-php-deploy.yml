@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myphp-deployment
+  name: php-deploy
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      env: production-frontend
+      env: production-php
   template:
     metadata:
-      name: myfrontend-pod
+      name: php-pod
       labels:
-        env: production-frontend
+        env: production-php
     spec:
       volumes:
-        - name: front-vol
+        - name: php-vol
           persistentVolumeClaim:
-            claimName: frontend-pvc
+            claimName: php-pvc
       containers:
-      - name: frontend
-        image: php:7.2-apache
+      - name: php
+        image: ldamasio/vtiger:1
         volumeMounts:
           - mountPath: /var/www/html
             name: front-vol
